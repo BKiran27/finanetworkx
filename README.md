@@ -24,4 +24,4 @@ A premium fintech networking platform where finance professionals connect, track
 | Charts | TradingView Lightweight Charts, Chart.js |
 
 
-ISC
+
