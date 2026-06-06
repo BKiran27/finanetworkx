@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FinaNetwork Network — Discover, connect, and collaborate with financial professionals.">
+  <meta name="theme-color" content="#0a0e27">
+  <title>FinaNetwork | Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <span class="logo-text">FinaNetwork</span>
+      </div>
+      <nav class="sidebar-nav">
+        <span class="nav-section-label">Menu</span>
+        <a href="dashboard.html" class="nav-link" id="navDashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="portfolio.html" class="nav-link" id="navPortfolio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span>Portfolio</span>
+        </a>
+        <a href="network.html" class="nav-link active" id="navNetwork">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Network</span>
+          <span class="nav-badge">3</span>
+        </a>
+        <span class="nav-section-label">Insights</span>
+        <a href="#" class="nav-link" id="navNews">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>News Feed</span>
+        </a>
+        <span class="nav-section-label">Account</span>
+        <a href="profile.html" class="nav-link" id="navProfile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Profile</span>
+        </a>
+        <a href="#" class="nav-link" id="navSettings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Settings</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="avatar avatar-sm">JD</div>
+          <div class="sidebar-user-info">
+            <div class="sidebar-user-name">John Doe</div>
+            <div class="sidebar-user-role">Portfolio Manager</div>
+          </div>
+          <button class="logout-btn" id="logoutBtn" title="Logout">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="main-wrapper">
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger-btn" id="hamburgerBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="search-wrapper">
+            <div class="search-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <input type="text" class="search-input" id="networkSearch" placeholder="Search users by name or role...">
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button class="topbar-icon-btn" id="notificationBtn" title="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="notification-count">3</span>
+          </button>
+          <div class="topbar-avatar" title="Profile">JD</div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+          <div>
+            <h1>Your Network</h1>
+            <p class="mt-xs" style="font-size: var(--font-size-sm);">
+              <span id="connectionCountDisplay">47</span> connections · <span id="pendingCountDisplay">3</span> pending requests
+            </p>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs mb-xl" id="networkTabs">
+          <button class="tab active" data-tab="discover" id="tabDiscover">Discover</button>
+          <button class="tab" data-tab="connections" id="tabConnections">My Connections</button>
+          <button class="tab" data-tab="pending" id="tabPending">Pending <span class="badge badge-danger" style="font-size: 10px; padding: 1px 6px; margin-left: 4px;">3</span></button>
+        </div>
+
+        <!-- Discover Tab -->
+        <div class="tab-content active" id="discoverContent">
+          <div class="search-wrapper mb-xl" style="max-width: 480px;">
+            <div class="search-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <input type="text" class="search-input" id="discoverSearch" placeholder="Search for people to connect with...">
+          </div>
+          <div class="user-grid" id="discoverGrid">
+            <!-- User Cards -->
+            <div class="user-card" id="userCard1">
+              <div class="avatar avatar-xl" style="background: linear-gradient(135deg, #4f7cff, #22d3ee);">SA</div>
+              <div class="user-name">Sarah Anderson</div>
+              <div class="user-title">Senior Analyst · Goldman Sachs</div>
+              <div class="user-mutual">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                12 mutual connections
+              </div>
+              <button class="connect-btn" id="connectBtn1">Connect</button>
+            </div>
+            <div class="user-card" id="userCard2">
+              <div class="avatar avatar-xl" style="background: linear-gradient(135deg, #a855f7, #ec4899);">MK</div>
+              <div class="user-name">Mike Kim</div>
+              <div class="user-title">Crypto Trader · Independent</div>
+              <div class="user-mutual">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                8 mutual connections
+              </div>
+              <button class="connect-btn" id="connectBtn2">Connect</button>
+            </div>
+            <div class="user-card" id="userCard3">
+              <div class="avatar avatar-xl" style="background: linear-gradient(135deg, #00d68f, #0ea5e9);">ER</div>
+              <div class="user-name">Emily Ross</div>
+              <div class="user-title">Portfolio Manager · Fidelity</div>
+              <div class="user-mutual">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                15 mutual connections
+              </div>
+              <button class="connect-btn" id="connectBtn3">Connect</button>
+            </div>
+            <div class="user-card" id="userCard4">
+              <div class="avatar avatar-xl" style="background: linear-gradient(135deg, #ffb347, #ff6b6b);">DJ</div>
+              <div class="user-name">David Johnson</div>
+              <div class="user-title">Quantitative Researcher · Citadel</div>
+              <div class="user-mutual">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                6 mutual connections
+              </div>
+              <button class="connect-btn" id="connectBtn4">Connect</button>
+            </div>
+            <div class="user-card" id="userCard5">
+              <div class="avatar avatar-xl" style="background: linear-gradient(135deg, #22d3ee, #4f7cff);">LS</div>
+              <div class="user-name">Lisa Chen</div>
+              <div class="user-title">DeFi Researcher · Chainlink Labs</div>
+              <div class="user-mutual">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                21 mutual connections
+              </div>
+              <button class="connect-btn" id="connectBtn5">Connect</button>
+            </div>
+            <div class="user-card" id="userCard6">
+              <div class="avatar avatar-xl" style="background: linear-gradient(135deg, #ec4899, #a855f7);">RT</div>
+              <div class="user-name">Ryan Torres</div>
+              <div class="user-title">Venture Capitalist · a16z</div>
+              <div class="user-mutual">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                9 mutual connections
+              </div>
+              <button class="connect-btn" id="connectBtn6">Connect</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- My Connections Tab -->
+        <div class="tab-content" id="connectionsContent">
+          <div class="user-grid" id="connectionsGrid">
+            <div class="user-card">
+              <div class="avatar avatar-xl" style="background: linear-gradient(135deg, #4f7cff, #a855f7);">AP</div>
+              <div class="user-name">Alex Patel</div>
+              <div class="user-title">Hedge Fund Manager · Bridgewater</div>
+              <div class="user-mutual" style="color: var(--accent-green);">
+                <span class="live-dot" style="width: 6px; height: 6px;"></span>
+                Connected
+              </div>
+              <div class="flex gap-xs" style="width: 100%;">
+                <button class="connect-btn connected" style="flex: 1;">Message</button>
+                <a href="profile.html" class="connect-btn" style="flex: 1; text-align: center; text-decoration: none; padding: 10px;">View</a>
+              </div>
+            </div>
+            <div class="user-card">
+              <div class="avatar avatar-xl" style="background: linear-gradient(135deg, #00d68f, #22d3ee);">NW</div>
+              <div class="user-name">Nina Williams</div>
+              <div class="user-title">Risk Analyst · JPMorgan</div>
+              <div class="user-mutual" style="color: var(--accent-green);">
+                <span class="live-dot" style="width: 6px; height: 6px;"></span>
+                Connected
+              </div>
+              <div class="flex gap-xs" style="width: 100%;">
+                <button class="connect-btn connected" style="flex: 1;">Message</button>
+                <a href="profile.html" class="connect-btn" style="flex: 1; text-align: center; text-decoration: none; padding: 10px;">View</a>
+              </div>
+            </div>
+            <div class="user-card">
+              <div class="avatar avatar-xl" style="background: linear-gradient(135deg, #ffb347, #ec4899);">TO</div>
+              <div class="user-name">Tom Okada</div>
+              <div class="user-title">Blockchain Developer · Ethereum Foundation</div>
+              <div class="user-mutual" style="color: var(--accent-green);">
+                <span class="live-dot" style="width: 6px; height: 6px;"></span>
+                Connected
+              </div>
+              <div class="flex gap-xs" style="width: 100%;">
+                <button class="connect-btn connected" style="flex: 1;">Message</button>
+                <a href="profile.html" class="connect-btn" style="flex: 1; text-align: center; text-decoration: none; padding: 10px;">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pending Tab -->
+        <div class="tab-content" id="pendingContent">
+          <h3 style="font-size: var(--font-size-md); font-weight: 600; margin-bottom: var(--space-lg);">Incoming Requests</h3>
+          <div class="pending-list" id="pendingIncoming">
+            <div class="pending-item" id="pendingItem1">
+              <div class="avatar avatar-lg" style="background: linear-gradient(135deg, #a855f7, #4f7cff);">JL</div>
+              <div class="pending-info">
+                <div class="pending-name">James Lee</div>
+                <div class="pending-title">Financial Advisor · Morgan Stanley</div>
+              </div>
+              <div class="pending-actions">
+                <button class="btn btn-primary btn-sm" id="acceptBtn1">Accept</button>
+                <button class="btn btn-secondary btn-sm" id="declineBtn1">Decline</button>
+              </div>
+            </div>
+            <div class="pending-item" id="pendingItem2">
+              <div class="avatar avatar-lg" style="background: linear-gradient(135deg, #22d3ee, #00d68f);">AM</div>
+              <div class="pending-info">
+                <div class="pending-name">Aria Martinez</div>
+                <div class="pending-title">Equity Researcher · BlackRock</div>
+              </div>
+              <div class="pending-actions">
+                <button class="btn btn-primary btn-sm" id="acceptBtn2">Accept</button>
+                <button class="btn btn-secondary btn-sm" id="declineBtn2">Decline</button>
+              </div>
+            </div>
+            <div class="pending-item" id="pendingItem3">
+              <div class="avatar avatar-lg" style="background: linear-gradient(135deg, #ff6b6b, #ffb347);">CB</div>
+              <div class="pending-info">
+                <div class="pending-name">Carlos Brown</div>
+                <div class="pending-title">Day Trader · Independent</div>
+              </div>
+              <div class="pending-actions">
+                <button class="btn btn-primary btn-sm" id="acceptBtn3">Accept</button>
+                <button class="btn btn-secondary btn-sm" id="declineBtn3">Decline</button>
+              </div>
+            </div>
+          </div>
+
+          <h3 style="font-size: var(--font-size-md); font-weight: 600; margin: var(--space-xl) 0 var(--space-lg);">Sent Requests</h3>
+          <div class="pending-list" id="pendingOutgoing">
+            <div class="pending-item">
+              <div class="avatar avatar-lg" style="background: linear-gradient(135deg, #4f7cff, #22d3ee);">KR</div>
+              <div class="pending-info">
+                <div class="pending-name">Karen Roberts</div>
+                <div class="pending-title">CTO · DeFi Protocol</div>
+              </div>
+              <div class="pending-actions">
+                <span class="badge badge-warning">Pending</span>
+              </div>
+            </div>
+            <div class="pending-item">
+              <div class="avatar avatar-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">BH</div>
+              <div class="pending-info">
+                <div class="pending-name">Ben Harris</div>
+                <div class="pending-title">Crypto Analyst · Coinbase</div>
+              </div>
+              <div class="pending-actions">
+                <span class="badge badge-warning">Pending</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/app.js" defer></script>
+  <script src="js/network.js" defer></script>
+  <script>
+    // Sidebar toggle
+    const hamburger = document.getElementById('hamburgerBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    hamburger?.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    });
+    sidebarOverlay?.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      sidebarOverlay.classList.remove('open');
+    });
+
+    // Network Tabs
+    const networkTabs = document.querySelectorAll('#networkTabs .tab');
+    const tabContents = {
+      discover: document.getElementById('discoverContent'),
+      connections: document.getElementById('connectionsContent'),
+      pending: document.getElementById('pendingContent')
+    };
+
+    networkTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        networkTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        Object.values(tabContents).forEach(c => c.classList.remove('active'));
+        tabContents[tab.dataset.tab].classList.add('active');
+      });
+    });
+
+    // Connect button interactions
+    document.querySelectorAll('.connect-btn:not(.connected):not(.pending)').forEach(btn => {
+      btn.addEventListener('click', function() {
+        if (this.textContent === 'Connect') {
+          this.textContent = 'Pending';
+          this.classList.add('pending');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

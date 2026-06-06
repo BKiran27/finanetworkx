@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FinaNetwork Portfolio — Track your holdings, analyze allocation, and monitor performance.">
+  <meta name="theme-color" content="#0a0e27">
+  <title>FinaNetwork | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <span class="logo-text">FinaNetwork</span>
+      </div>
+      <nav class="sidebar-nav">
+        <span class="nav-section-label">Menu</span>
+        <a href="dashboard.html" class="nav-link" id="navDashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="portfolio.html" class="nav-link active" id="navPortfolio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span>Portfolio</span>
+        </a>
+        <a href="network.html" class="nav-link" id="navNetwork">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Network</span>
+        </a>
+        <span class="nav-section-label">Insights</span>
+        <a href="#" class="nav-link" id="navNews">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>News Feed</span>
+        </a>
+        <span class="nav-section-label">Account</span>
+        <a href="profile.html" class="nav-link" id="navProfile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Profile</span>
+        </a>
+        <a href="#" class="nav-link" id="navSettings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Settings</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-user" id="sidebarUser">
+          <div class="avatar avatar-sm">JD</div>
+          <div class="sidebar-user-info">
+            <div class="sidebar-user-name">John Doe</div>
+            <div class="sidebar-user-role">Portfolio Manager</div>
+          </div>
+          <button class="logout-btn" id="logoutBtn" title="Logout">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="main-wrapper">
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger-btn" id="hamburgerBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="search-wrapper">
+            <div class="search-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <input type="text" class="search-input" id="portfolioSearch" placeholder="Search holdings...">
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button class="topbar-icon-btn" id="notificationBtn" title="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="notification-count">3</span>
+          </button>
+          <div class="topbar-avatar" title="Profile">JD</div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+          <div>
+            <h1>My Portfolio</h1>
+            <p class="mt-xs" style="font-size: var(--font-size-sm);">Track your holdings and performance</p>
+          </div>
+          <button class="btn btn-primary" id="addAssetBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Asset
+          </button>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="stats-grid" id="portfolioStats">
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <span class="stat-card-label">Total Value</span>
+              <div class="stat-card-icon blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+            </div>
+            <div class="stat-card-value" id="totalValueDisplay">$124,563.00</div>
+            <div class="stat-card-change positive">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+              +$2,340 today
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <span class="stat-card-label">24h P&L</span>
+              <div class="stat-card-icon green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+            </div>
+            <div class="stat-card-value text-green" id="dailyPnlDisplay">+$2,340.50</div>
+            <div class="stat-card-change positive">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+              +1.91%
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <span class="stat-card-label">Total Invested</span>
+              <div class="stat-card-icon purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </div>
+            </div>
+            <div class="stat-card-value" id="totalInvestedDisplay">$98,450.00</div>
+            <div class="stat-card-change positive" style="color: var(--text-muted);">Since Jan 2024</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <span class="stat-card-label">Total ROI</span>
+              <div class="stat-card-icon amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+            </div>
+            <div class="stat-card-value text-green" id="roiDisplay">+26.5%</div>
+            <div class="stat-card-change positive">All time gains</div>
+          </div>
+        </div>
+
+        <!-- Holdings + Charts Layout -->
+        <div class="portfolio-grid">
+          <!-- Holdings Table -->
+          <div class="holdings-table-wrapper" id="holdingsTableCard">
+            <div class="card-header">
+              <h3 style="font-size: var(--font-size-md); font-weight: 600;">Holdings</h3>
+              <div class="flex gap-xs">
+                <button class="btn btn-ghost btn-sm">Export</button>
+              </div>
+            </div>
+            <div class="market-table-wrapper">
+              <table class="holdings-table" id="holdingsTable">
+                <thead>
+                  <tr>
+                    <th>Coin</th>
+                    <th>Amount</th>
+                    <th>Avg Buy</th>
+                    <th>Price</th>
+                    <th>Value</th>
+                    <th>P&L</th>
+                    <th>P&L %</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="holdingsTableBody">
+                  <tr>
+                    <td>
+                      <div class="coin-cell">
+                        <div class="coin-icon" style="background: rgba(247,147,26,0.15); color: #f7931a;">₿</div>
+                        <div><span class="coin-name">Bitcoin</span><span class="coin-symbol">BTC</span></div>
+                      </div>
+                    </td>
+                    <td>0.78</td>
+                    <td>$52,340</td>
+                    <td>$67,234</td>
+                    <td><strong>$52,442.52</strong></td>
+                    <td class="change-positive">+$11,617.32</td>
+                    <td class="change-positive">+28.5%</td>
+                    <td>
+                      <div class="action-btns">
+                        <button class="btn btn-ghost btn-sm" title="Edit">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                        </button>
+                        <button class="btn btn-ghost btn-sm" title="Delete" style="color: var(--accent-red);">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="coin-cell">
+                        <div class="coin-icon" style="background: rgba(98,126,234,0.15); color: #627eea;">Ξ</div>
+                        <div><span class="coin-name">Ethereum</span><span class="coin-symbol">ETH</span></div>
+                      </div>
+                    </td>
+                    <td>10.2</td>
+                    <td>$2,890</td>
+                    <td>$3,456</td>
+                    <td><strong>$35,251.20</strong></td>
+                    <td class="change-positive">+$5,773.20</td>
+                    <td class="change-positive">+19.6%</td>
+                    <td>
+                      <div class="action-btns">
+                        <button class="btn btn-ghost btn-sm" title="Edit">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                        </button>
+                        <button class="btn btn-ghost btn-sm" title="Delete" style="color: var(--accent-red);">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="coin-cell">
+                        <div class="coin-icon" style="background: rgba(0,214,143,0.15); color: #00d68f;">◎</div>
+                        <div><span class="coin-name">Solana</span><span class="coin-symbol">SOL</span></div>
+                      </div>
+                    </td>
+                    <td>104.5</td>
+                    <td>$120.00</td>
+                    <td>$178.50</td>
+                    <td><strong>$18,653.25</strong></td>
+                    <td class="change-positive">+$6,113.25</td>
+                    <td class="change-positive">+48.8%</td>
+                    <td>
+                      <div class="action-btns">
+                        <button class="btn btn-ghost btn-sm" title="Edit">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                        </button>
+                        <button class="btn btn-ghost btn-sm" title="Delete" style="color: var(--accent-red);">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="coin-cell">
+                        <div class="coin-icon" style="background: rgba(255,179,71,0.15); color: #ffb347;">B</div>
+                        <div><span class="coin-name">BNB</span><span class="coin-symbol">BNB</span></div>
+                      </div>
+                    </td>
+                    <td>15.0</td>
+                    <td>$480.00</td>
+                    <td>$612.30</td>
+                    <td><strong>$9,184.50</strong></td>
+                    <td class="change-positive">+$1,984.50</td>
+                    <td class="change-positive">+27.6%</td>
+                    <td>
+                      <div class="action-btns">
+                        <button class="btn btn-ghost btn-sm" title="Edit">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                        </button>
+                        <button class="btn btn-ghost btn-sm" title="Delete" style="color: var(--accent-red);">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Charts Column -->
+          <div class="allocation-chart-wrapper">
+            <div class="chart-container">
+              <div class="chart-header">
+                <h3 style="font-size: var(--font-size-md); font-weight: 600;">Allocation</h3>
+              </div>
+              <div class="card-body flex-center" style="min-height: 260px;">
+                <canvas id="allocationDonutChart" style="max-width: 220px; max-height: 220px;"></canvas>
+              </div>
+              <div class="card-body" style="padding-top: 0;">
+                <div class="portfolio-holdings-list" id="allocationLegend">
+                  <div class="holding-item">
+                    <div class="holding-info"><span class="holding-dot" style="background: #4f7cff;"></span><span class="holding-name">Bitcoin</span></div>
+                    <span class="holding-value">42%</span>
+                  </div>
+                  <div class="holding-item">
+                    <div class="holding-info"><span class="holding-dot" style="background: #627eea;"></span><span class="holding-name">Ethereum</span></div>
+                    <span class="holding-value">28%</span>
+                  </div>
+                  <div class="holding-item">
+                    <div class="holding-info"><span class="holding-dot" style="background: #00d68f;"></span><span class="holding-name">Solana</span></div>
+                    <span class="holding-value">15%</span>
+                  </div>
+                  <div class="holding-item">
+                    <div class="holding-info"><span class="holding-dot" style="background: #ffb347;"></span><span class="holding-name">BNB</span></div>
+                    <span class="holding-value">8%</span>
+                  </div>
+                  <div class="holding-item">
+                    <div class="holding-info"><span class="holding-dot" style="background: #a855f7;"></span><span class="holding-name">Others</span></div>
+                    <span class="holding-value">7%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-container">
+              <div class="chart-header">
+                <h3 style="font-size: var(--font-size-md); font-weight: 600;">Performance</h3>
+                <div class="chart-timeframes" id="perfTimeframes">
+                  <button class="tf-btn" data-tf="1W">1W</button>
+                  <button class="tf-btn active" data-tf="1M">1M</button>
+                  <button class="tf-btn" data-tf="3M">3M</button>
+                  <button class="tf-btn" data-tf="1Y">1Y</button>
+                </div>
+              </div>
+              <div class="chart-area chart-area-sm" id="performanceChart">
+                <canvas id="performanceLineChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Add Asset Modal -->
+  <div class="modal-overlay" id="addAssetModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Add Asset</h3>
+        <button class="modal-close" id="closeAddAssetModal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="assetSearchInput">Search Coin</label>
+          <input type="text" id="assetSearchInput" class="form-input" placeholder="Search by name or symbol...">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="assetSelect">Select Coin</label>
+          <select id="assetSelect" class="form-select">
+            <option value="" disabled selected>Choose an asset</option>
+            <option value="btc">Bitcoin (BTC)</option>
+            <option value="eth">Ethereum (ETH)</option>
+            <option value="sol">Solana (SOL)</option>
+            <option value="bnb">BNB (BNB)</option>
+            <option value="xrp">XRP (XRP)</option>
+            <option value="ada">Cardano (ADA)</option>
+            <option value="avax">Avalanche (AVAX)</option>
+            <option value="dot">Polkadot (DOT)</option>
+          </select>
+        </div>
+        <div class="form-group-inline" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label class="form-label" for="assetAmount">Amount</label>
+            <input type="number" id="assetAmount" class="form-input" placeholder="0.00" step="any" min="0">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="assetBuyPrice">Buy Price (USD)</label>
+            <input type="number" id="assetBuyPrice" class="form-input" placeholder="0.00" step="any" min="0">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="cancelAddAssetBtn">Cancel</button>
+        <button class="btn btn-primary" id="confirmAddAssetBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Asset
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/portfolio.js" defer></script>
+  <script>
+    // Sidebar toggle
+    const hamburger = document.getElementById('hamburgerBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    hamburger?.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    });
+    sidebarOverlay?.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      sidebarOverlay.classList.remove('open');
+    });
+
+    // Add Asset Modal
+    const addAssetBtn = document.getElementById('addAssetBtn');
+    const addAssetModal = document.getElementById('addAssetModal');
+    const closeAddAssetModal = document.getElementById('closeAddAssetModal');
+    const cancelAddAssetBtn = document.getElementById('cancelAddAssetBtn');
+
+    addAssetBtn?.addEventListener('click', () => addAssetModal.classList.add('active'));
+    closeAddAssetModal?.addEventListener('click', () => addAssetModal.classList.remove('active'));
+    cancelAddAssetBtn?.addEventListener('click', () => addAssetModal.classList.remove('active'));
+    addAssetModal?.addEventListener('click', (e) => {
+      if (e.target === addAssetModal) addAssetModal.classList.remove('active');
+    });
+
+    // Timeframe buttons
+    document.querySelectorAll('.tf-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.chart-timeframes').querySelectorAll('.tf-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

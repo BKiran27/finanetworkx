@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FinaNetwork Dashboard — Real-time market data, portfolio tracking, and financial networking.">
+  <meta name="theme-color" content="#0a0e27">
+  <title>FinaNetwork | Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <span class="logo-text">FinaNetwork</span>
+      </div>
+      <nav class="sidebar-nav">
+        <span class="nav-section-label">Menu</span>
+        <a href="dashboard.html" class="nav-link active" id="navDashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="portfolio.html" class="nav-link" id="navPortfolio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span>Portfolio</span>
+        </a>
+        <a href="network.html" class="nav-link" id="navNetwork">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Network</span>
+          <span class="nav-badge" id="networkBadge">3</span>
+        </a>
+        <span class="nav-section-label">Insights</span>
+        <a href="#" class="nav-link" id="navNews">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>News Feed</span>
+        </a>
+        <span class="nav-section-label">Account</span>
+        <a href="profile.html" class="nav-link" id="navProfile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Profile</span>
+        </a>
+        <a href="#" class="nav-link" id="navSettings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Settings</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-user" id="sidebarUser">
+          <div class="avatar avatar-sm" id="sidebarAvatar">JD</div>
+          <div class="sidebar-user-info">
+            <div class="sidebar-user-name" id="sidebarUserName">John Doe</div>
+            <div class="sidebar-user-role" id="sidebarUserRole">Portfolio Manager</div>
+          </div>
+          <button class="logout-btn" id="logoutBtn" title="Logout">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger-btn" id="hamburgerBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="search-wrapper">
+            <div class="search-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <input type="text" class="search-input" id="dashboardSearch" placeholder="Search markets, assets, users...">
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="live-indicator hide-mobile">
+            <span class="live-dot"></span>
+            Live
+          </div>
+          <button class="topbar-icon-btn" id="notificationBtn" title="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="notification-count" id="notifCount">5</span>
+          </button>
+          <div class="topbar-avatar" id="topbarAvatar" title="Profile">JD</div>
+        </div>
+      </header>
+
+      <!-- Market Ticker -->
+      <div class="ticker-strip" id="tickerStrip">
+        <div class="ticker-track" id="tickerTrack">
+          <!-- JS will populate, but here are defaults -->
+          <div class="ticker-item"><span class="ticker-symbol">BTC</span><span class="ticker-price">$67,234</span><span class="ticker-change positive">+2.4%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">ETH</span><span class="ticker-price">$3,456</span><span class="ticker-change positive">+1.8%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">SOL</span><span class="ticker-price">$178.50</span><span class="ticker-change negative">-0.5%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">BNB</span><span class="ticker-price">$612.30</span><span class="ticker-change positive">+3.1%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">XRP</span><span class="ticker-price">$0.634</span><span class="ticker-change negative">-1.2%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">ADA</span><span class="ticker-price">$0.498</span><span class="ticker-change positive">+0.7%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">AVAX</span><span class="ticker-price">$42.15</span><span class="ticker-change positive">+4.2%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">DOT</span><span class="ticker-price">$7.89</span><span class="ticker-change negative">-0.3%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">MATIC</span><span class="ticker-price">$0.92</span><span class="ticker-change positive">+1.5%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">LINK</span><span class="ticker-price">$18.34</span><span class="ticker-change positive">+2.8%</span></div>
+          <!-- Duplicate for seamless loop -->
+          <div class="ticker-item"><span class="ticker-symbol">BTC</span><span class="ticker-price">$67,234</span><span class="ticker-change positive">+2.4%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">ETH</span><span class="ticker-price">$3,456</span><span class="ticker-change positive">+1.8%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">SOL</span><span class="ticker-price">$178.50</span><span class="ticker-change negative">-0.5%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">BNB</span><span class="ticker-price">$612.30</span><span class="ticker-change positive">+3.1%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">XRP</span><span class="ticker-price">$0.634</span><span class="ticker-change negative">-1.2%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">ADA</span><span class="ticker-price">$0.498</span><span class="ticker-change positive">+0.7%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">AVAX</span><span class="ticker-price">$42.15</span><span class="ticker-change positive">+4.2%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">DOT</span><span class="ticker-price">$7.89</span><span class="ticker-change negative">-0.3%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">MATIC</span><span class="ticker-price">$0.92</span><span class="ticker-change positive">+1.5%</span></div>
+          <div class="ticker-item"><span class="ticker-symbol">LINK</span><span class="ticker-price">$18.34</span><span class="ticker-change positive">+2.8%</span></div>
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Stats Row -->
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card" id="statPortfolioValue">
+            <div class="stat-card-header">
+              <span class="stat-card-label">Portfolio Value</span>
+              <div class="stat-card-icon blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+            </div>
+            <div class="stat-card-value" id="portfolioValueDisplay">$124,563.00</div>
+            <div class="stat-card-change positive" id="portfolioChangeDisplay">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+              +$2,340.50 (1.91%)
+            </div>
+          </div>
+          <div class="stat-card" id="stat24hChange">
+            <div class="stat-card-header">
+              <span class="stat-card-label">24h Change</span>
+              <div class="stat-card-icon green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+            </div>
+            <div class="stat-card-value" id="changeValueDisplay">+$2,340</div>
+            <div class="stat-card-change positive" id="changePercentDisplay">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+              +1.91% today
+            </div>
+          </div>
+          <div class="stat-card" id="statTotalAssets">
+            <div class="stat-card-header">
+              <span class="stat-card-label">Total Assets</span>
+              <div class="stat-card-icon purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              </div>
+            </div>
+            <div class="stat-card-value" id="totalAssetsDisplay">12</div>
+            <div class="stat-card-change positive">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+              +2 this week
+            </div>
+          </div>
+          <div class="stat-card" id="statNetworkSize">
+            <div class="stat-card-header">
+              <span class="stat-card-label">Network</span>
+              <div class="stat-card-icon amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+            <div class="stat-card-value" id="networkSizeDisplay">47</div>
+            <div class="stat-card-change positive">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+              +5 connections
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart + Portfolio Row -->
+        <div class="widget-grid">
+          <!-- Main Chart -->
+          <div class="chart-container" id="chartWidget">
+            <div class="chart-header">
+              <div class="flex items-center gap-sm">
+                <h3>Market Overview</h3>
+                <div class="live-indicator">
+                  <span class="live-dot"></span>
+                  <span>Real-time</span>
+                </div>
+              </div>
+              <div class="chart-timeframes" id="chartTimeframes">
+                <button class="tf-btn" data-tf="1H">1H</button>
+                <button class="tf-btn active" data-tf="1D">1D</button>
+                <button class="tf-btn" data-tf="1W">1W</button>
+                <button class="tf-btn" data-tf="1M">1M</button>
+                <button class="tf-btn" data-tf="1Y">1Y</button>
+              </div>
+            </div>
+            <div class="chart-area" id="main-chart">
+              <!-- Loading skeleton -->
+              <div class="skeleton skeleton-rect" style="width:100%;height:100%;" id="chartSkeleton"></div>
+            </div>
+          </div>
+
+          <!-- Portfolio Summary -->
+          <div class="portfolio-mini" id="portfolioSummaryWidget">
+            <div class="flex-between mb-md">
+              <h3 style="font-size: var(--font-size-md); font-weight: 600;">Portfolio</h3>
+              <a href="portfolio.html" class="btn btn-ghost btn-sm">View All</a>
+            </div>
+            <div class="portfolio-mini-value" id="portfolioMiniValue">$124,563</div>
+            <div class="portfolio-mini-change positive" id="portfolioMiniChange">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+              +1.91% today
+            </div>
+            <div class="donut-wrapper">
+              <canvas id="portfolioDonut"></canvas>
+            </div>
+            <div class="portfolio-holdings-list" id="portfolioHoldingsList">
+              <div class="holding-item">
+                <div class="holding-info">
+                  <span class="holding-dot" style="background: #4f7cff;"></span>
+                  <span class="holding-name">Bitcoin</span>
+                </div>
+                <span class="holding-value">42%</span>
+              </div>
+              <div class="holding-item">
+                <div class="holding-info">
+                  <span class="holding-dot" style="background: #a855f7;"></span>
+                  <span class="holding-name">Ethereum</span>
+                </div>
+                <span class="holding-value">28%</span>
+              </div>
+              <div class="holding-item">
+                <div class="holding-info">
+                  <span class="holding-dot" style="background: #00d68f;"></span>
+                  <span class="holding-name">Solana</span>
+                </div>
+                <span class="holding-value">15%</span>
+              </div>
+              <div class="holding-item">
+                <div class="holding-info">
+                  <span class="holding-dot" style="background: #ffb347;"></span>
+                  <span class="holding-name">Others</span>
+                </div>
+                <span class="holding-value">15%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Market Table + Trending/Activity Row -->
+        <div class="widget-grid">
+          <!-- Market Prices Table -->
+          <div class="card" id="marketTableCard">
+            <div class="card-header">
+              <h3 style="font-size: var(--font-size-md); font-weight: 600;">Market Prices</h3>
+              <button class="btn btn-ghost btn-sm">See All</button>
+            </div>
+            <div class="card-body p-0">
+              <div class="market-table-wrapper">
+                <table class="market-table" id="marketTable">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Coin</th>
+                      <th>Price</th>
+                      <th>24h %</th>
+                      <th class="hide-mobile">7d %</th>
+                      <th class="hide-mobile">Market Cap</th>
+                      <th class="hide-mobile">Sparkline</th>
+                    </tr>
+                  </thead>
+                  <tbody id="marketTableBody">
+                    <!-- Skeleton rows -->
+                    <tr><td colspan="7" style="padding: 16px;"><div class="skeleton skeleton-text"></div></td></tr>
+                    <tr><td colspan="7" style="padding: 16px;"><div class="skeleton skeleton-text"></div></td></tr>
+                    <tr><td colspan="7" style="padding: 16px;"><div class="skeleton skeleton-text"></div></td></tr>
+                    <tr><td colspan="7" style="padding: 16px;"><div class="skeleton skeleton-text"></div></td></tr>
+                    <tr><td colspan="7" style="padding: 16px;"><div class="skeleton skeleton-text"></div></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trending & Activity Sidebar -->
+          <div class="flex-col gap-lg">
+            <!-- Trending -->
+            <div class="trending-widget" id="trendingWidget">
+              <div class="card-header">
+                <h3 style="font-size: var(--font-size-md); font-weight: 600;">🔥 Trending</h3>
+              </div>
+              <div id="trendingList">
+                <div class="trending-item">
+                  <span class="trending-rank">1</span>
+                  <div class="coin-icon" style="background: rgba(247,147,26,0.15); color: #f7931a; font-size: 11px; width:28px; height:28px;">₿</div>
+                  <div class="trending-info">
+                    <div class="trending-name">Bitcoin</div>
+                    <div class="trending-detail">BTC · $67,234</div>
+                  </div>
+                  <span class="badge badge-success">+2.4%</span>
+                </div>
+                <div class="trending-item">
+                  <span class="trending-rank">2</span>
+                  <div class="coin-icon" style="background: rgba(98,126,234,0.15); color: #627eea; font-size: 11px; width:28px; height:28px;">Ξ</div>
+                  <div class="trending-info">
+                    <div class="trending-name">Ethereum</div>
+                    <div class="trending-detail">ETH · $3,456</div>
+                  </div>
+                  <span class="badge badge-success">+1.8%</span>
+                </div>
+                <div class="trending-item">
+                  <span class="trending-rank">3</span>
+                  <div class="coin-icon" style="background: rgba(0,214,143,0.15); color: #00d68f; font-size: 11px; width:28px; height:28px;">◎</div>
+                  <div class="trending-info">
+                    <div class="trending-name">Solana</div>
+                    <div class="trending-detail">SOL · $178.50</div>
+                  </div>
+                  <span class="badge badge-danger">-0.5%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activity Feed -->
+            <div class="card" id="activityFeedCard">
+              <div class="card-header">
+                <h3 style="font-size: var(--font-size-md); font-weight: 600;">Recent Activity</h3>
+              </div>
+              <div class="card-body-scroll">
+                <div class="activity-feed" id="activityFeed">
+                  <div class="activity-item">
+                    <div class="activity-avatar">SA</div>
+                    <div class="activity-content">
+                      <div class="activity-text"><strong>Sarah Anderson</strong> added BTC to portfolio</div>
+                      <div class="activity-time">2 min ago</div>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="activity-avatar" style="background: linear-gradient(135deg, #00d68f, #0ea5e9);">MK</div>
+                    <div class="activity-content">
+                      <div class="activity-text"><strong>Mike Kim</strong> connected with you</div>
+                      <div class="activity-time">15 min ago</div>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="activity-avatar" style="background: linear-gradient(135deg, #a855f7, #ec4899);">ER</div>
+                    <div class="activity-content">
+                      <div class="activity-text"><strong>Emily Ross</strong> shared a market insight</div>
+                      <div class="activity-time">1 hour ago</div>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="activity-avatar" style="background: linear-gradient(135deg, #ffb347, #ff6b6b);">DJ</div>
+                    <div class="activity-content">
+                      <div class="activity-text"><strong>David Johnson</strong> sold 0.5 ETH at $3,450</div>
+                      <div class="activity-time">2 hours ago</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Notification Panel -->
+    <div class="notification-overlay" id="notifOverlay"></div>
+    <div class="notification-panel" id="notifPanel">
+      <div class="notification-panel-header">
+        <h3>Notifications</h3>
+        <button class="btn btn-ghost btn-sm" id="markAllReadBtn">Mark all read</button>
+      </div>
+      <div class="notification-list" id="notifList">
+        <div class="notification-item unread">
+          <div class="notification-icon price">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div class="notification-content">
+            <div class="notification-text"><strong>BTC</strong> is up <strong>+2.4%</strong> in the last hour</div>
+            <div class="notification-time">2 min ago</div>
+          </div>
+        </div>
+        <div class="notification-item unread">
+          <div class="notification-icon network">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+          </div>
+          <div class="notification-content">
+            <div class="notification-text"><strong>Sarah Anderson</strong> accepted your connection request</div>
+            <div class="notification-time">15 min ago</div>
+          </div>
+        </div>
+        <div class="notification-item unread">
+          <div class="notification-icon alert">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="notification-content">
+            <div class="notification-text"><strong>ETH</strong> dropped below your alert price of <strong>$3,400</strong></div>
+            <div class="notification-time">1 hour ago</div>
+          </div>
+        </div>
+        <div class="notification-item">
+          <div class="notification-icon network">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="notification-content">
+            <div class="notification-text"><strong>Mike Kim</strong> sent you a connection request</div>
+            <div class="notification-time">3 hours ago</div>
+          </div>
+        </div>
+        <div class="notification-item">
+          <div class="notification-icon price">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="notification-content">
+            <div class="notification-text">Your portfolio gained <strong>+$2,340</strong> today 🎉</div>
+            <div class="notification-time">5 hours ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+  <script src="js/charts.js" defer></script>
+  <script>
+    // Sidebar toggle (mobile)
+    const hamburger = document.getElementById('hamburgerBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    hamburger?.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    });
+    sidebarOverlay?.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      sidebarOverlay.classList.remove('open');
+    });
+
+    // Notification Panel toggle
+    const notifBtn = document.getElementById('notificationBtn');
+    const notifPanel = document.getElementById('notifPanel');
+    const notifOverlay = document.getElementById('notifOverlay');
+
+    notifBtn?.addEventListener('click', () => {
+      notifPanel.classList.toggle('open');
+      notifOverlay.classList.toggle('open');
+    });
+    notifOverlay?.addEventListener('click', () => {
+      notifPanel.classList.remove('open');
+      notifOverlay.classList.remove('open');
+    });
+
+    // Timeframe buttons
+    document.querySelectorAll('.tf-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tf-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
