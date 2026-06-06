@@ -12,18 +12,19 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   try {
-    const { q, page = 1, limit = 20 } = req.query;
+    const { q, search, page = 1, limit = 20 } = req.query;
     const offset = (Math.max(1, parseInt(page, 10)) - 1) * parseInt(limit, 10);
     const lim = Math.min(100, Math.max(1, parseInt(limit, 10)));
 
     let users;
     let total;
+    const queryTerm = q || search;
 
-    if (q && q.trim()) {
-      const search = `%${q.trim()}%`;
+    if (queryTerm && queryTerm.trim()) {
+      const searchLike = `%${queryTerm.trim()}%`;
       total = db
         .prepare('SELECT COUNT(*) AS count FROM users WHERE name LIKE ? OR email LIKE ? OR title LIKE ?')
-        .get(search, search, search).count;
+        .get(searchLike, searchLike, searchLike).count;
 
       users = db
         .prepare(
@@ -33,7 +34,7 @@ router.get('/', (req, res) => {
            ORDER BY name ASC
            LIMIT ? OFFSET ?`
         )
-        .all(search, search, search, lim, offset);
+        .all(searchLike, searchLike, searchLike, lim, offset);
     } else {
       total = db.prepare('SELECT COUNT(*) AS count FROM users').get().count;
 

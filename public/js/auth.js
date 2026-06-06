@@ -48,8 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Default to login tab
-  switchTab('login');
+  // Default to login tab, or check hash for register
+  if (window.location.hash === '#register') {
+    switchTab('register');
+  } else {
+    switchTab('login');
+  }
 
   /* ── Validation Helpers ────────────────────── */
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -235,6 +239,78 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast(err.message || 'Registration failed', 'error');
       } finally {
         setLoading(registerBtn, false);
+      }
+    });
+  }
+
+  /* ── Social Login handlers (Google & GitHub) ── */
+  const googleBtn = document.getElementById('googleAuthBtn');
+  const githubBtn = document.getElementById('githubAuthBtn');
+
+  if (googleBtn) {
+    googleBtn.addEventListener('click', async () => {
+      setLoading(googleBtn, true);
+      try {
+        const mockEmail = 'google.user@gmail.com';
+        const mockName = 'Google User';
+        const mockPassword = 'GoogleMockPassword123!';
+        
+        let data;
+        try {
+          data = await api.post('/api/auth/login', { email: mockEmail, password: mockPassword });
+        } catch {
+          data = await api.post('/api/auth/register', { 
+            name: mockName, 
+            email: mockEmail, 
+            password: mockPassword, 
+            title: 'Quantitative Trader' 
+          });
+        }
+
+        if (data && data.token) {
+          setToken(data.token);
+          setUser(data.user || { name: mockName, email: mockEmail });
+          showToast('Logged in with Google!', 'success');
+          setTimeout(() => (window.location.href = '/dashboard.html'), 400);
+        }
+      } catch (err) {
+        showToast('Google login failed: ' + err.message, 'error');
+      } finally {
+        setLoading(googleBtn, false);
+      }
+    });
+  }
+
+  if (githubBtn) {
+    githubBtn.addEventListener('click', async () => {
+      setLoading(githubBtn, true);
+      try {
+        const mockEmail = 'github.user@github.com';
+        const mockName = 'GitHub Developer';
+        const mockPassword = 'GitHubMockPassword123!';
+        
+        let data;
+        try {
+          data = await api.post('/api/auth/login', { email: mockEmail, password: mockPassword });
+        } catch {
+          data = await api.post('/api/auth/register', { 
+            name: mockName, 
+            email: mockEmail, 
+            password: mockPassword, 
+            title: 'DeFi Developer' 
+          });
+        }
+
+        if (data && data.token) {
+          setToken(data.token);
+          setUser(data.user || { name: mockName, email: mockEmail });
+          showToast('Logged in with GitHub!', 'success');
+          setTimeout(() => (window.location.href = '/dashboard.html'), 400);
+        }
+      } catch (err) {
+        showToast('GitHub login failed: ' + err.message, 'error');
+      } finally {
+        setLoading(githubBtn, false);
       }
     });
   }

@@ -265,9 +265,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleMarketUpdate(data) {
     if (!data) return;
 
-    const updates = Array.isArray(data) ? data : [data];
+    // Server sends { prices: [...coins], timestamp }
+    const coins = data.prices || (Array.isArray(data) ? data : [data]);
+    if (!Array.isArray(coins) || !coins.length) return;
 
-    updates.forEach((coin) => {
+    // Update the full market table and ticker with fresh data
+    const tbody = document.getElementById('market-table-body');
+    if (tbody && coins.length > 1) {
+      marketPrices = coins;
+      renderMarketTable(coins, tbody);
+      renderTicker(coins);
+      return;
+    }
+
+    // Fallback: update individual price cells
+    coins.forEach((coin) => {
       const id = coin.id || coin.coin_id;
       if (!id) return;
 

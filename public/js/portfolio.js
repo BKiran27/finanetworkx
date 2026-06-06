@@ -193,8 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
     addAssetForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const coinId = document.getElementById('asset-coin')?.value?.trim();
-      const coinName = document.getElementById('asset-coin')?.selectedOptions?.[0]?.text || coinId;
+      const coinSelect = document.getElementById('asset-coin');
+      const coinId = coinSelect?.value?.trim();
+      const coinName = coinSelect?.selectedOptions?.[0]?.text?.split(' (')[0] || coinId;
+      const symbol = coinSelect?.selectedOptions?.[0]?.dataset?.symbol || '';
       const amount = parseFloat(document.getElementById('asset-amount')?.value);
       const buyPrice = parseFloat(document.getElementById('asset-buy-price')?.value);
 
@@ -218,6 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         await api.post('/api/portfolio', {
           coin_id: coinId,
           coin_name: coinName,
+          symbol,
           amount,
           buy_price: buyPrice,
         });
@@ -288,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     socket.on('market-update', (data) => {
       if (!data) return;
-      const updates = Array.isArray(data) ? data : [data];
+      const updates = data.prices || (Array.isArray(data) ? data : [data]);
 
       let changed = false;
 
